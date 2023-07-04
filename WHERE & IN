@@ -1,0 +1,25 @@
+/* WHERE & IN operator
+Shortcut to using multiple OR conditions
+referencing different values in the same column. 
+
+SELECT 
+	customer_id, 
+    rental_id, 
+    amount, 
+    payment_date
+FROM payment
+WHERE amount > 5
+	OR customer_id = 42
+    OR customer_id = 53
+    OR customer_id = 60
+    OR customer_id = 75
+
+-- Using WHERE & IN produces the exact result using less OR conditions. 
+
+SELECT 
+	customer_id, 
+    rental_id, 
+    amount, 
+    payment_date
+FROM payment
+WHERE customer_id IN(5, 11, 29) # query is faster than above

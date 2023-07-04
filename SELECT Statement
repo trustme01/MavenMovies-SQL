@@ -1,4 +1,6 @@
 /* SELECT statement
+Identifies the columns to query. 
+SELECT column_name, other_column_name
 Assignment: pull a list of 
 */ 
 

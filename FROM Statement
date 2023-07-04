@@ -1,0 +1,10 @@
+/* FROM statement
+Identifies the TABLES to query. 
+FROM table_name; 
+Use JOIN to select multiple tables. 
+*/ 
+
+SELECT 
+    customer_id, 
+    rental_date
+FROM rental;

@@ -25,3 +25,14 @@ SELECT
 FROM payment
 -- WHERE payment_date > '2006-01-01' or
 WHERE amount = 0.99
+
+
+-- Assignment/ solution: 
+
+SELECT *
+FROM payment
+WHERE customer_id < 101
+/* OR 
+WHERE customer_id <= 101
+WHERE customer_id BETWEEN 1 AND 100 
+*/ 

@@ -1,0 +1,28 @@
+/* Combining WHERE & AND Clauses: 
+Logical conditions for filtering data
+*/
+
+SELECT 
+	customer_id, 
+	rental_id, 
+	amount, 
+	payment_date
+FROM payment
+WHERE amount = 0.99
+	AND payment_date > '2006-01-01'
+
+/* Assignment: WHERE & AND 
+Fitler to see payments over $5, 
+for the first 100 customers since
+January 1, 2006
+*/
+
+SELECT 
+	customer_id, 
+    rental_id, 
+    amount, 
+    payment_date
+FROM payment
+WHERE customer_id < 101
+	AND amount >= 5.00
+    AND payment_date >= '2006-01-01' 

@@ -1,0 +1,9 @@
+/* SELECT statment
+Assignment: pull a list of 
+
+*/ 
+
+SELECT 
+	customer_id, 
+    rental_date
+FROM rental;   

@@ -1,0 +1,13 @@
+/* DISTINCT 
+Returns unique values in columns. 
+If multiple columns are selected, will return
+distinct combinations of all the columns selected.
+*/
+
+SELECT DISTINCT
+    rating 
+FROM film 
+
+SELECT DISTINCT
+	rental_duration 
+FROM film

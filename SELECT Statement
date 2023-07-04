@@ -1,4 +1,4 @@
-/* SELECT statment
+/* SELECT statement
 Assignment: pull a list of 
 */ 
 
@@ -6,3 +6,18 @@ SELECT
 	customer_id, 
     rental_date
 FROM rental;   
+
+
+/* Assignment: SELECT statement
+Pull a list of customers; 
+First, last name, and email
+*/ 
+
+use mavenmovies; 
+
+SELECT	
+	first_name,
+    last_name, 
+    email
+FROM customer
+

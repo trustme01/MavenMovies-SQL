@@ -6,11 +6,29 @@ Can use AND & OR with WHERE.
 */ 
 
 SELECT 
-	  customer_id, 
+    customer_id, 
     rental_id, 
     amount, 
     payment_date
 FROM payment
 WHERE customer_id = 5 # returns 38 rows
 	OR customer_id = 11 # returns 62 rows
-  OR customer_id = 29 # returns 98 rows
+    OR customer_id = 29 # returns 98 rows
+
+/* Assignment: WHERE & OR 
+Return payments from customers: 
+42, 53, 60, 75 and all payemnts
+over $5 from any customer. 
+*/
+
+SELECT 
+    customer_id, 
+    rental_id, 
+    amount, 
+    payment_date
+FROM payment
+WHERE amount > 5
+	OR customer_id = 42
+    OR customer_id = 53
+    OR customer_id = 60
+    OR customer_id = 75

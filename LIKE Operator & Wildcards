@@ -1,0 +1,42 @@
+/* LIKE, NOT LIKE Operator & WILDCARDS
+Pattern matching  in logical operators, 
+instead of exact matching. 
+
+LIKE '%pattern_to_look_for%'
+	% = wildcard, '%text', '%text%', 'text%'
+    _ = 'erry' (Terry, Jerry)
+
+NOT LIKE  = excludes (filters out)
+
+Powerpoint Slide 67
+WildCard Examples: 
+column = 'value' (TRUE, gives exact match)
+column LIKE 'pattern%' (TRUE, first character matches, followed by other text)
+column LIKE '%pattern' (TRUE, last character matches, preceded by other text)
+column LIKE '%pattern%' (TRUE, any characters match, before or after)
+column LIKE 'pattern_' (TRUE, first character matches, regardless if followed)
+column LIKE '_pattern' (TRUE, last character matches, regardless if preceded)
+column LIKE '_pattern_' (TRUE, any characters match, 1 character before or after)
+*/
+
+SELECT 
+    title, 
+    description
+FROM film
+WHERE title LIKE 'ALADDIN CALENDAR%'
+
+/* Assignment: LIKE Operator
+We need to understand the special features in our films. 
+Pull a list that includes a Behind the Scenes special feature. 
+
+SELECT 
+	title, 
+	special_features
+FROM film
+*/ 
+
+SELECT 
+	title, 
+    special_features 
+FROM film
+WHERE special_features LIKE '%Behind%'

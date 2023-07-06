@@ -1,6 +1,6 @@
 /* LIKE Operator
 Used for pattern matching for logical operators 
-(instead of exact meaning). 
+(instead of the exact meaning). 
 
 LIKE %pattern_to_look_for%
 
@@ -13,9 +13,17 @@ WHERE first_name LIKE '_erry' 	 = end with 'erry,' exactly one char before
 NOT LIKE: filters out records, use same wildcards and capitalization. 
 
 
-*/
 SELECT 
 	title, 
     description
 FROM film
 WHERE title NOT LIKE '_LADDIN CALENDA_'
+
+*/
+
+# Assignment: Find 'Behind the Scenes' special features in films. 
+SELECT 
+	title, 
+    special_features
+FROM film
+WHERE special_features LIKE '%Behind the scenes%' # 538 rows returned

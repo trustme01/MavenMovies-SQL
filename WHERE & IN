@@ -14,7 +14,7 @@ WHERE amount > 5
     OR customer_id = 60
     OR customer_id = 75
 
--- Using WHERE & IN produces the exact result using less OR conditions. 
+# Using WHERE & IN produces the exact result using less OR conditions and faster. 
 
 SELECT 
 	customer_id, 

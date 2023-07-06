@@ -1,0 +1,21 @@
+/* LIKE Operator
+Used for pattern matching for logical operators 
+(instead of exact meaning). 
+
+LIKE %pattern_to_look_for%
+
+Ex: 
+WHERE name LIKE 'Denise%' 		 = starts with 'Denise,' any char after
+WHERE description LIKE '%fancy%' = contains 'fancy,' any char before/ after
+WHERE name LIKE '%Johnson'		 = records end with 'Johnson,' any char before
+WHERE first_name LIKE '_erry' 	 = end with 'erry,' exactly one char before
+
+NOT LIKE: filters out records, use same wildcards and capitalization. 
+
+
+*/
+SELECT 
+	title, 
+    description
+FROM film
+WHERE title NOT LIKE '_LADDIN CALENDA_'

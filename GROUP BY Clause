@@ -1,0 +1,101 @@
+/* The GROUP BY Clause (Optional) specifies how to group data
+Similar to Pivot Tables
+
+GROUPBY column_name, other_column_name
+
+Ex. 
+- GROUPBY category
+- GROUPBY store_location
+- GROUPBY store_location, category
+
+Comes after WHERE, and before any HAVING, 
+or ORDER BY clauses in query. 
+
+Great for comparing different segments
+
+Group Aggregation: 
+ - COUNT
+ - SUM
+ - PERCENTAGES...
+ 
+SELECT 
+	rating,
+    COUNT(film_id)
+FROM film
+GROUP BY
+	rating
+
+
+ALIASES (AS): 	
+	- Assigns a custom name to the resulting set
+
+SELECT
+	rating, 
+    COUNT(film_id), 
+    COUNT(film_id) AS films_with_this_rating
+FROM film
+GROUP BY
+	rating 
+
+-- Assignment/ solution: 
+
+SELECT * FROM film
+SELECT 
+	rental_duration, 
+    COUNT(film_id) AS films_with_this_rental_duration
+FROM
+	film
+GROUP BY
+	rental_duration
+
+
+Multiple Dimension GROUP BY clauses: 
+	- Can select multiple columns, seperated with comma
+    - Will create subgroups much like multiple row, column labels in PivotTable. 
+
+SELECT 
+	rating,
+    rental_duration,
+    replacement_cost,
+    COUNT(film_id) AS count_of_films
+FROM
+	film
+GROUP BY
+	rating,
+    rental_duration,
+    replacement_cost
+    
+
+Aggregate Functions: 
+ - COUNT() #skips NULL values, need to use * to include NULL values
+ - COUNT DISTINCT() #skips NULL values
+ - MIN()
+ - MAX()
+ - AVG()
+ - SUM() #NULL values = 0 zero
+
+ SELECT 
+	rating, 
+    COUNT(film_id) AS count_of_films, 
+    MIN(length) AS shortest_film, 
+    MAX(length) AS longest_film,
+    AVG(length) AS Average_Lenght_of_Film, 
+    -- SUM(length) AS total_minutes,
+    AVG(rental_duration) AS avg_rental_duration
+FROM film
+GROUP BY
+	rating
+
+- Aggregate Functions assignment/ solution: 
+Do we charge more for a rental when the replacement cost is higher? 
+*/ 
+
+SELECT
+	replacement_cost, 
+    COUNT(film_id) AS num_of_films, 
+    AVG(rental_rate) AS avg_rental,
+    MIN(rental_rate) AS cheapest_film, 
+    MAX(rental_rate) AS most_expensive_film
+FROM film
+GROUP BY
+	replacement_cost

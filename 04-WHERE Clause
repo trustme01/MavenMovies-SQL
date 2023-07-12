@@ -4,9 +4,19 @@ Always comes after the FROM clause.
 Specifies criteria for filtering records. 
 
 Use logical conditions: 
-'TEXT', AND, =, <> (not equal), <, >, >=, <=,  
-OR, BETWEEN, LIKE, IN()[equals one of these values] 
-*/
+-'TEXT', AND, OR
+Operators: 
+
+ = 	      Equal
+ <>       Does not equal
+ >        Greater than
+ <        Less than
+ >=       Greater than or equal to
+ <=       Less than or equal to 
+ BETWEEN  a range between two values
+ LIKE 	  matching pattern
+ NOT LIKE excludes 
+ IN() 	  equal to one of these values
 
 SELECT 
     customer_id, 

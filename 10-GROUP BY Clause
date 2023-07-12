@@ -1,12 +1,12 @@
 /* The GROUP BY Clause (Optional) specifies how to group data
 Similar to Pivot Tables
 
-GROUPBY column_name, other_column_name
+GROUP BY column_name, other_column_name
 
 Ex. 
-- GROUPBY category
-- GROUPBY store_location
-- GROUPBY store_location, category
+- GROUP BY category
+- GROUP BY store_location
+- GROUP BY store_location, category
 
 Comes after WHERE, and before any HAVING, 
 or ORDER BY clauses in query. 
@@ -50,8 +50,8 @@ GROUP BY
 
 
 Multiple Dimension GROUP BY clauses: 
-	- Can select multiple columns, seperated with comma
-    - Will create subgroups much like multiple row, column labels in PivotTable. 
+	- Can select multiple columns, separated with comma
+    - Will create subgroups much like multiple rows, column labels in PivotTable. 
 
 SELECT 
 	rating,

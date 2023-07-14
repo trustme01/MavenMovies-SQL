@@ -1,0 +1,34 @@
+/* HAVING Clause
+ slide 80
+HAVING (optional) specifies group-filtering criteria
+	- can only be used with GROUP BY. 
+    - if not using GROUP BY, use WHERE instead
+    - comes before ORDER BY
+    
+HAVING locial condition
+	- results only the most important groups. 
+    
+ex. 
+	- HAVING COUNT(*) > 1
+    - HAVING SUM(payment) > 10
+    - HAVING(rental_date) < '2005-05-25'
+
+SELECT
+	customer_id, 
+	COUNT(rental_id) AS total_rentals
+FROM rental
+GROUP BY 
+	customer_id
+HAVING COUNT(rental_id) >= 30
+
+Assignment: 
+Generate list of customer_dis with less than 15 rentals all time? 
+*/
+
+SELECT
+	customer_id, 
+	COUNT(rental_id) AS total_rentals
+FROM rental
+GROUP BY 
+	customer_id
+HAVING COUNT(rental_id) < 15

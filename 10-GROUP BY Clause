@@ -1,4 +1,5 @@
-/* The GROUP BY Clause (Optional) specifies how to group data
+/* The GROUP BY Clause 
+(Optional) specifies how to group data
 Similar to Pivot Tables
 
 GROUP BY column_name, other_column_name

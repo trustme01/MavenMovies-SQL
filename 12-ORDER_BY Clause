@@ -1,0 +1,46 @@
+/* The ORDER BY Clause
+(optional) specifies order in which results are displayed. 
+
+columnName, otherColumnName [default is ascending order, low to high]
+
+- used after WHERE, GROUP BY, and HAVING clauses. 
+
+syntax: 
+SELECT 
+	customer_id, 
+    rental_id, 
+    amount, 
+    payment_date
+FROM payment
+ORDER BY amount DESC; 
+
+ex: 
+SELECT 	
+	customer_id, 
+    rental_id, 
+    amount, 
+    payment_date
+FROM payment
+ORDER BY amount DESC, customer_id DESC; 	#secondary grouping
+
+
+ex2: 
+SELECT 	
+	customer_id, 
+    SUM(amount) AS total_payment_amount # adding  aggregagte metric
+FROM payment
+GROUP BY 	
+	customer_id
+ORDER BY 
+	SUM(amount) DESC
+
+Assignment: 
+"Provide report of longest films and expensive rentals." 
+*/ 
+
+SELECT 
+	title, 
+    length, 
+    rental_rate
+FROM film
+ORDER BY length DESC; 

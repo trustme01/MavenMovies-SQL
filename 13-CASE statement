@@ -1,0 +1,33 @@
+/* CASE Statement
+- Process a series of IF/THEN logical operators in specific order. 
+- Uses conditional logic to specify how results should be calculated. 
+- Most common application is to bucket values. 
+
+Ex: 
+	CASE WHEN logic1 THEN value1 WHEN logic2 THEN value2 ELSE(optional) value3 END
+	Every CASE statement begins with CASE, ends with END, and contains at least one THEN/WHEN pair.
+	   	
+Ex: 
+CASE                                                        
+	WHEN category IN('horror', 'suspense')THEN 'too scary'
+    WHEN lenght > 90 THEN 'too long'
+    ELSE 'we should see it'
+END
+
+!! CASE stateemnts execute in order they appear. Left to right, top to bottom. 
+Fullfill until one criteria is met. 
+
+ELSE condition used as a catch all. 
+
+ex: 
+SELECT DISTINCT
+	length, 
+    CASE 
+		WHEN length < 60 THEN 'under 1hr'
+        WHEN length BETWEEN 60 AND 90 THEN '1-1.5hrs'
+        WHEN length > 90 THEN 'over 1.5hrs'
+        ELSE 'error, check code'
+	END AS lenght_bucket
+FROM film; 
+
+*/ 
